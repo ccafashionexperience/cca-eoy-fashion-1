@@ -15,8 +15,8 @@ h2 {
 }
 
 #text, #overlay h2 {
-    font-size: 134px;
-    line-height: 160px;
+    font-size: 108px;
+    line-height: 144px;
 }
 
 #text {
@@ -24,8 +24,28 @@ h2 {
     letter-spacing: 1px;
 }
 
+#text #statement, #text #credits {
+    font-family: PingFangHK-Regular, sans-serif;
+    text-transform: none;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+#text #statement {
+    font-size: 60px;
+    line-height: 80px;
+}
+
+#text #credits {
+    font-size: 30px;
+    line-height: 40px;
+}
+
 .title {
-    font-family: PingFangHK-Semibold, sans-serif;    
+    font-size: 28px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 a {
@@ -37,26 +57,49 @@ a {
 #enter {
     position: fixed;
     top: 20px;
-    left: 65px;
+    left: 20px;
     font-size: 14px;
     font-family: PingFangHK-Semibold, sans-serif;
     z-index: 10000;    
+
+    border-radius: 100%;
+    border: 2px solid white;
+    padding: 8px 10px;
 }
+
+#cca-logo {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+
+    z-index: 100000;
+}
+
+#cca-logo img {
+    width: 80px;
+    height: auto;    
+}
+
 
 /* main text column */
 
 #text {
     position: relative;
     z-index: 100;
-    padding: 100px;
+    padding: 100px 100px 200px;
     width: 100vw;
     text-align: center;
     z-index: 1;
     /*color: rgba(255,255,255,.9);*/
 }
 
+#text #statement, #text #credits {
+    max-width: 1200px;
+    margin: auto;    
+}
+
 p {
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 }
 
 #text img {
@@ -88,31 +131,46 @@ p {
     text-shadow: 0px 0px 20px rgba(0,0,0,.5);
 }
 
-#text .credits {
-    font-size: 36px;
-    line-height: 44px;
+#text #statement, #text #credits {
+    max-width: 1200px;
+    margin: auto;
+}
+
+#text #statement p {
+    margin-bottom: 36px;
+}
+
+#statement {
+    margin-bottom: 120px;
+}
+
+#text #credits {
+    padding-top: 100px;
     display: flex;
     align-items: top;
     width: 100%;
-    text-transform: none;
-    text-align: left;
+    /*text-align: left;*/
 }
 
-#text .credits ul {
-    width: 50%;
+#text #credits ul {
+    flex: 1;
 }
 
-.credits ul {
+#credits ul {
     list-style-type: none;
 }
 
-.credits ul li.title::before{
+#credits ul li.title{
+    padding-bottom: 20px;
+}
+
+/*.credits ul li.title::before{
     content: '';
 }
 
 .credits ul li::before{
     content: '✳︎';
-}
+*/}
 
 .credits ul li{
     padding-bottom: 11px;
@@ -169,15 +227,122 @@ canvas {
 }
 
 
+@media screen and (max-width: 1400px){
 
-@keyframes rotate {
-    0% {
-        transform: scale(1) skewX(5deg);
+    #text, #overlay h2 {
+        font-size: 108px;
+        line-height: 144px;
     }
-    50% {
-        transform: scale(1.125) skewX(25deg);
+
+    #text {
+        letter-spacing: 1px;
     }
-    100% {
-        transform:  scale(1) skewX(5deg);
+
+}
+
+
+@media screen and (max-width: 1200px){
+
+    #text, #overlay h2 {
+        font-size: 90px;
+        line-height: 120px;
     }
+
+    #text {
+        letter-spacing: 1px;
+    }
+
+    #text #statement, #text #credits {
+        font-size: 24px;
+        line-height: 36px;
+        max-width: calc(100vw - 40px);
+    }
+
+    .title {
+        font-size: 22px;
+        padding-bottom: 18px;
+        letter-spacing: 1px;
+    }
+
+    #text #statement p {
+        margin-bottom: 24px;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+
+    #text {
+        padding: 100px 40px;
+    }
+
+    #text, #overlay h2 {
+        font-size: 48px;
+        line-height: 64px;
+    }
+
+    #text {
+        letter-spacing: 1px;
+    }
+
+    #text img {
+        max-height: 40px;
+    }
+
+    #text #statement, #text #credits {
+        max-width: 100%;
+    }
+
+    #text #statement p {
+        margin-bottom: 24px;
+    }    
+
+    canvas {
+        pointer-events: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+
+    #text, #overlay h2 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    #text {
+        letter-spacing: 0px;
+    }
+
+    #text img {
+        max-height: 30px;
+    }
+
+    #text #credits {
+        display: block;
+    }
+
+    #text #credits ul {
+        margin-bottom: 48px;
+    }
+    
+    #text #statement, #text #credits {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .title {
+        font-size: 14px;
+        padding-bottom: 12px;
+        letter-spacing: 1px;
+    }    
+
+    #text #statement p {
+        margin-bottom: 14px;
+    }
+
+    canvas {
+        opacity: .8;
+    }
+
+
 }
