@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: PingFangHK-Light, sans-serif;
+    font-family: PingFangSC-Light, sans-serif;
     background: black;
     color: white;
 }
@@ -25,7 +25,7 @@ h2 {
 }
 
 #text #statement, #text #credits {
-    font-family: PingFangHK-Regular, sans-serif;
+    font-family: PingFangSC-Regular, sans-serif;
     text-transform: none;
     letter-spacing: 0px;
     text-align: left;
@@ -59,7 +59,7 @@ a {
     top: 20px;
     left: 20px;
     font-size: 14px;
-    font-family: PingFangHK-Semibold, sans-serif;
+    font-family: PingFangSC-Semibold, sans-serif;
     z-index: 10000;    
 
     border-radius: 100%;
@@ -273,7 +273,7 @@ canvas {
 @media screen and (max-width: 1000px){
 
     #text {
-        padding: 100px 40px;
+        padding: 100px 20px;
     }
 
     #text, #overlay h2 {
@@ -342,6 +342,10 @@ canvas {
 
     canvas {
         opacity: .8;
+    }
+
+    #button {
+        border: 3px solid white;
     }
 
 
