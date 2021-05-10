@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+/* korean type*/
+
+@font-face {
+    font-family: "Gothic A1";
+    src: url("/GothicA1-Light.ttf") format("truetype");
+    font-weight: 100;
+} 
+
+@font-face {
+    font-family: "Gothic A1";
+    src: url("/GothicA1-Regular.ttf") format("truetype");
+    font-weight: 200;
+} 
+
+/* variables */
+
+:root {
+  --main-color: #ffcd58;
+}
+
+:root {
+  --highlight-color: #e22028;
+}
+
+/* typography */
+
 body {
     font-family: PingFangSC-Light, sans-serif;
     background: black;
@@ -24,11 +50,16 @@ h2 {
     letter-spacing: 1px;
 }
 
-#text #statement, #text #credits {
+#text #statement, #text #credits, #text #statement .english {
     font-family: PingFangSC-Regular, sans-serif;
     text-transform: none;
     letter-spacing: 0px;
     text-align: left;
+}
+
+#text #statement .korean {
+    font-family: "Gothic A1";
+    font-weight: 200;
 }
 
 #text #statement {
@@ -52,6 +83,11 @@ a {
     color: white;
     /*color: black;*/
     text-decoration: none;
+}
+
+a:hover {
+    color: rgba(255,255,255,1);
+    text-shadow: 0px 0px 40px var(--highlight-color);
 }
 
 #enter {
@@ -95,7 +131,8 @@ a {
 
 #text #statement, #text #credits {
     max-width: 1200px;
-    margin: auto;    
+    margin: auto;
+    color: rgba(255,255,255,0.9);
 }
 
 p {
@@ -118,7 +155,11 @@ p {
 
 #button:hover {
     background: rgba(255,255,255,0.2); 
-    /*box-shadow: 0px 0px 20px rgba(0,0,0,.5);*/
+    box-shadow: 0px 0px 20px var(--highlight-color);
+}
+
+.color {
+    color: var(--main-color);    
 }
 
 /* click to show student work */
@@ -142,6 +183,14 @@ p {
 
 #statement {
     margin-bottom: 120px;
+}
+
+.translation {
+    padding-bottom: 120px;
+}
+
+.translation:after {
+    content: '—';
 }
 
 #text #credits {
