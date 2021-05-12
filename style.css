@@ -7,21 +7,44 @@
 /* korean type*/
 
 @font-face {
-    font-family: "Gothic A1";
-    src: url("/GothicA1-Light.ttf") format("truetype");
+    font-family: 'Gothic A1';
+    src: url("GothicA1-Light.ttf") format("truetype");
     font-weight: 100;
 } 
 
 @font-face {
     font-family: "Gothic A1";
-    src: url("/GothicA1-Regular.ttf") format("truetype");
+    src: url("GothicA1-Regular.ttf") format("truetype");
     font-weight: 200;
 } 
+
+/* chinese fallback */
+
+@font-face {
+    font-family: "Noto Sans";
+    src: url("NotoSansSC-Regular.otf") format("opentype");
+    font-weight: 200;
+} 
+
+/* latin fallback */
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 100;
+    src: url("Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 200;
+    src: url("Poppins-Regular.ttf") format("truetype");
+}
+
 
 /* variables */
 
 :root {
-  --main-color: #ffcd58;
+  --main-color: #bfe62b;
 }
 
 :root {
@@ -31,9 +54,10 @@
 /* typography */
 
 body {
-    font-family: PingFangSC-Light, sans-serif;
+    font-family: PingFangSC-Light, 'Poppins', Arial, Helvetica, sans-serif;
     background: black;
     color: white;
+    font-weight: 100;
 }
 
 h2 {
@@ -51,20 +75,32 @@ h2 {
 }
 
 #text #statement, #text #credits, #text #statement .english {
-    font-family: PingFangSC-Regular, sans-serif;
+    font-family: PingFangSC-Regular, 'Poppins', Arial, Helvetica, sans-serif;
     text-transform: none;
     letter-spacing: 0px;
     text-align: left;
 }
 
+#enter, #mobile-message {
+    font-size: 14px;
+    font-family: PingFangSC-Semibold, 'Poppins', Arial, Helvetica, sans-serif;
+}
+
 #text #statement .korean {
-    font-family: "Gothic A1";
+    font-family: 'Gothic A1';
     font-weight: 200;
 }
+
+#text #statement .chinese {
+    font-family: PingFangSC-Regular, 'Noto Sans';
+    font-weight: 200;
+}
+
 
 #text #statement {
     font-size: 60px;
     line-height: 80px;
+    font-weight: 200: 
 }
 
 #text #credits {
@@ -94,13 +130,28 @@ a:hover {
     position: fixed;
     top: 20px;
     left: 20px;
-    font-size: 14px;
-    font-family: PingFangSC-Semibold, sans-serif;
     z-index: 10000;    
 
     border-radius: 100%;
     border: 2px solid white;
     padding: 8px 10px;
+}
+
+/* hide mobile message on desktop */
+
+#mobile-message {
+    position: relative;
+    margin: 20px 20px 0px;
+    display: block;
+    z-index: 10000000;    
+    border-radius: 100%;
+    border: 2px solid white;
+    padding: 8px 24px;
+    text-align: center;
+}
+
+#mobile-message {
+    display: none;
 }
 
 #cca-logo {
@@ -132,7 +183,7 @@ a:hover {
 #text #statement, #text #credits {
     max-width: 1200px;
     margin: auto;
-    color: rgba(255,255,255,0.9);
+    /*color: rgba(255,255,255,0.9);*/
 }
 
 p {
@@ -397,5 +448,20 @@ canvas {
         border: 3px solid white;
     }
 
+}
 
+@media screen and (max-width: 800px) {
+    #enter, #button {
+        display: none;
+    }
+    
+    #mobile-message{
+        display: block;
+    }    
+}
+
+@media screen and (max-width: 800px) and (hover: hover) {
+    #enter, #button {
+        display: inline;
+    }
 }
