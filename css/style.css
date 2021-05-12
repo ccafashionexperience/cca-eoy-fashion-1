@@ -20,12 +20,12 @@
 
 /* chinese fallback */
 
-@font-face {
+/*@font-face {
     font-family: "Noto Sans";
     src: url("../fonts/NotoSansSC-Regular.otf") format("opentype");
     font-weight: 200;
 } 
-
+*/
 /* latin fallback */
 
 @font-face {
@@ -92,7 +92,7 @@ h1, h2 {
 }
 
 #text #statement .chinese {
-    font-family: PingFangSC-Regular, 'Noto Sans';
+    font-family: 'Noto Sans SC', PingFangSC-Regular, 'Noto Sans SC';
     font-weight: 200;
 }
 
@@ -334,6 +334,14 @@ canvas {
 
 #artist-page #text {
     background: rgba(0,0,0,.8);
+}
+
+/* game */
+
+#experience iframe {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
 }
 
 @media screen and (max-width: 1400px){

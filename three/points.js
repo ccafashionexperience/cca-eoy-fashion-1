@@ -76,23 +76,23 @@ function init() {
     }
     )
 
-  loader.load('./three/Kexin_1_Lo_Poly.obj',
+  // loader.load('./three/Kexin_1_Lo_Poly.obj',
     
-    (obj) => {
-      material = new THREE.PointsMaterial( { size: .0015, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
-      material.color.setHSL( 0.75, 0.7, 0.6 );
-      mesh = new THREE.Points(obj.children[0].geometry, material)
-      mesh.position.y = -1.3
-      scene.add(mesh)
+  //   (obj) => {
+  //     material = new THREE.PointsMaterial( { size: .0015, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
+  //     material.color.setHSL( 0.75, 0.7, 0.6 );
+  //     mesh = new THREE.Points(obj.children[0].geometry, material)
+  //     mesh.position.y = -1.3
+  //     scene.add(mesh)
 
-    },
-    (xhr) => {
-      console.log(xhr)
-    },
-    (err) => {
-      console.error("loading .obj went wrong, ", err)
-    }
-    )
+  //   },
+  //   (xhr) => {
+  //     console.log(xhr)
+  //   },
+  //   (err) => {
+  //     console.error("loading .obj went wrong, ", err)
+  //   }
+  //   )
   
   document.body.appendChild(renderer.domElement)
   animationLoop()
