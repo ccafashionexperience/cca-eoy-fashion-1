@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* korean type*/
 
 @font-face {
@@ -48,7 +53,8 @@
 }
 
 :root {
-  --highlight-color: #e22028;
+  --highlight-color: rgb(226,32,40);
+  --highlight-color: rgb(255,255,255);
 }
 
 /* typography */
@@ -64,9 +70,17 @@ h1, h2 {
     font-weight: 100;
 }
 
+.center {
+    text-align: center;
+}
+
 #text, #overlay h2, #artist-page h1, #artist-page h2 {
     font-size: 108px;
     line-height: 144px;
+}
+
+#artist-page h1, #artist-page h2 {
+    line-height: 108px;
 }
 
 #text {
@@ -81,7 +95,7 @@ h1, h2 {
     text-align: left;
 }
 
-#enter, #mobile-message {
+#enter, #back, #mobile-message, #jump-to-statement {
     font-size: 14px;
     font-family: PingFangSC-Semibold, 'Poppins', Arial, Helvetica, sans-serif;
 }
@@ -117,8 +131,7 @@ h1, h2 {
 a {
     color: white;
     /*color: black;*/
-    text-decoration: none;
-    transition: 300ms ease;    
+    text-decoration: none;   
 }
 
 a:hover {
@@ -126,20 +139,34 @@ a:hover {
     text-shadow: 0px 0px 40px var(--highlight-color);
 }
 
-#enter{
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 10000;    
-    left: auto;
-    right: 20px;
+#student-links a {
+    color: rgba(255,255,255,.75);
 }
 
-#enter a{
+#student-links a:hover {
+    color: rgba(255,255,255,1);
+}
+
+#enter, #back {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    z-index: 10000;   
     border-radius: 100%;
     border: 2px solid white;
-    padding: 8px 10px;
-    transition: 300ms ease;    
+    padding: 10px 16px;
+}
+
+#jump-to-statement {
+    position: absolute;
+    top: calc(100vh - 80px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+
+    border-radius: 100%;
+    border: 2px solid white;
+    padding: 12px 30px;
 }
 
 /* hide mobile message on desktop */
@@ -210,7 +237,7 @@ p {
     /*background: rgba(255,255,255,0.1);*/
 }
 
-#button:hover, #enter a:hover {
+#button:hover, #enter:hover, #back:hover {
     background: rgba(255,255,255,0.2); 
     box-shadow: 0px 0px 20px var(--highlight-color);
 }
@@ -305,18 +332,28 @@ canvas {
     pointer-events: none;
 }
 
-#artist-page h1 {
+.title {
     position: absolute;
     top: 10px;
     left: 20px;
 }
 
+#artist-page #statement {
+    padding-top: 100px;
+}
+
+/*#artist-page h1 {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}*/
+
 #artist-page h2 {
     color: var(--main-color);    
-    position: absolute;
+/*    position: absolute;
     bottom: 10px;
     right: 20px;
-    text-align: right;
+    text-align: right;*/
 }
 
 #embed iframe{
@@ -336,12 +373,29 @@ canvas {
     background: rgba(0,0,0,.8);
 }
 
+video {
+    width: 100%;
+    height: auto;
+}
+
 /* game */
 
 #experience iframe {
     position: fixed;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
+}
+
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    pointer-events: none;
+    background: radial-gradient(ellipse, rgba(255,255,255,0) 64%, rgba(255,255,255,.8) 66%, rgba(0,0,0,1) 70%);
+    z-index: 10;
 }
 
 @media screen and (max-width: 1400px){
@@ -350,6 +404,10 @@ canvas {
         font-size: 108px;
         line-height: 144px;
     }
+
+    #artist-page h1, #artist-page h2 {
+        line-height: 108px;
+    }    
 
     #text {
         letter-spacing: 1px;
@@ -364,6 +422,10 @@ canvas {
         font-size: 90px;
         line-height: 120px;
     }
+    
+    #artist-page h1, #artist-page h2 {
+        line-height: 90px;
+    }    
 
     #text {
         letter-spacing: 1px;
@@ -397,6 +459,10 @@ canvas {
         font-size: 48px;
         line-height: 64px;
     }
+
+    #artist-page h1, #artist-page h2 {
+        line-height: 48px;
+    }    
 
     #text {
         letter-spacing: 1px;
@@ -435,6 +501,10 @@ canvas {
     #text, #overlay h2, #artist-page h1, #artist-page h2 {
         font-size: 24px;
         line-height: 36px;
+    }
+
+    #artist-page h1, #artist-page h2 {
+        line-height: 24px;
     }
 
     #text {
