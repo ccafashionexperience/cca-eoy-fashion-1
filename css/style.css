@@ -95,7 +95,7 @@ h1, h2 {
     text-align: left;
 }
 
-#enter, #back, #mobile-message, #jump-to-statement {
+#enter, #back, #mobile-message, #jump-to-statement, #enter-game {
     font-size: 14px;
     font-family: PingFangSC-Semibold, 'Poppins', Arial, Helvetica, sans-serif;
 }
@@ -116,7 +116,7 @@ h1, h2 {
     font-weight: 200: 
 }
 
-#text #credits {
+#text #credits, #game-message {
     font-size: 30px;
     line-height: 40px;
 }
@@ -135,6 +135,7 @@ a {
 }
 
 a:hover {
+    cursor: pointer;
     color: rgba(255,255,255,1);
     text-shadow: 0px 0px 40px var(--highlight-color);
 }
@@ -248,9 +249,10 @@ p {
     /*background: rgba(255,255,255,0.1);*/
 }
 
-#button:hover, #enter:hover, #back:hover {
+#button:hover, #enter:hover, #back:hover, #enter-game:hover, #jump-to-statement:hover {
     background: rgba(255,255,255,0.2); 
     box-shadow: 0px 0px 20px var(--highlight-color);
+    cursor: pointer;
 }
 
 .color {
@@ -338,7 +340,7 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.1) 20%, rgba(0,0,0,.2) 80%, rgba(0,0,0,.8) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.1) 20%, rgba(0,0,0,.2) 80%, rgba(0,0,0,.8) 100%);
     z-index: 100;
     pointer-events: none;
 }
@@ -382,6 +384,7 @@ canvas {
 
 #artist-page #text {
     background: rgba(0,0,0,.8);
+    background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.8) 95%, rgba(0,0,0,.3) 100%);    
 }
 
 video {
@@ -399,14 +402,50 @@ video {
 }
 
 #overlay {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
+    width: 160vw;
+    height: 120vh;
+    top: -10vh;
+    left: -30vw;
     position: fixed;
-    pointer-events: none;
     background: radial-gradient(ellipse, rgba(255,255,255,0) 64%, rgba(255,255,255,.8) 66%, rgba(0,0,0,1) 70%);
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-message {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.85);
+    transition: opacity 1000ms ease;
+}
+
+#game-text {
+    width: 960px;
+    max-width: calc(100vw - 40px);
+}
+
+#game-text p{
+    margin-bottom: 40px;
+}
+
+#enter-game {
+    border-radius: 100%;
+    border: 2px solid white;
+    padding: 10px 16px;    
+}
+
+#overlay.dismiss {
+    pointer-events: none;    
+}
+
+#overlay.dismiss #game-message {
+    opacity: 0;
 }
 
 @media screen and (max-width: 1400px){

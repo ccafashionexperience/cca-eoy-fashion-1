@@ -26,6 +26,16 @@ camX = (getRandomInt(2, 8))/10;
 camY = (getRandomInt(2, 8))/10;
 camZ = (getRandomInt(1, 20))/1000;
 
+posX = (getRandomInt(0, 4))/10;
+posY = (getRandomInt(0, 4))/10;
+
+posX1 = (getRandomInt(0, 4))/10;
+posY1 = (getRandomInt(0, 4))/10;
+
+
+console.log(posX);
+console.log(posY);
+
 
 function init() {
   scene = new THREE.Scene()
@@ -63,8 +73,8 @@ function init() {
       material.color.setHSL( 0.15, 0.8, 0.7 );
       mesh = new THREE.Points(obj.children[0].geometry, material)
       mesh.position.y = -1.1
-      // mesh.position.x = -.5
-      // mesh.position.z = -.5
+      mesh.position.x = -posX
+      mesh.position.z = -posY
       scene.add(mesh)
 
     },
@@ -83,6 +93,8 @@ function init() {
       material.color.setHSL( 0.75, 0.7, 0.6 );
       mesh = new THREE.Points(obj.children[0].geometry, material)
       mesh.position.y = -1.3
+      mesh.position.x = -posX1
+      mesh.position.z = -posY1     
       scene.add(mesh)
 
     },

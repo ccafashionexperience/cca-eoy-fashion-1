@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width">
-<title>CCA 2021 Fashion Experience</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="stylesheet" href="./css/style.css">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>CCA 2021 Fashion Experience</title>
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="experience">
 	<iframe frameborder="0" src="https://itch.io/embed-upload/3822607?color=333333" allowfullscreen=""></iframe>
 	<div id="overlay">
+		<div id="game-message">
+			<div id="game-text">
+				<p>We live in tender times.</p> 
+				<p>This years’ CCA fashion themes include:</p>
+				<p>anxiety and exhaustion . loneliness . empathy for the self, for the other, and for all species . vulnerability . courage . centering home whilst on the move . local design-sheds . gender freedom . creativity and craft as sanctuary . the power within . magic . celebration . merging the tactile, digital, biological and virtual worlds.</p>
+				<p><span id="enter-game">Enter the Experience</span></p>
+			</div>
+		</div>
 	</div>
 	<div id="back"><a href="./">Back</a></div>
+	<script>
+		let overlay = document.getElementById('overlay');
+		document.onclick = removeOverlay;
+		function removeOverlay() {
+			document.getElementById("overlay").classList.add('dismiss');
+		}		
+	</script>
 </body>
 </html>
