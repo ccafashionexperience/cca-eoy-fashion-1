@@ -1,35 +1,11 @@
-$(document).ready(function(){
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    var student;
-    var image;
-    var work;
-
-    $('.image').click(function(){
-        work = $(this).attr("data-title");
-        student = $(this).attr("data-student");
-        image = $(this).attr("data-image");
-        // url = $(this).attr("data-url");
-
-        $('#overlay').addClass('active');
-        // $('#back').addClass('active');
-
-        $('h2#work').html(work);
-        $('h2#student').html(student);
-        $('img#showcase-image').attr("src", image);
-        // $('#overlay').attr("src", url);
-
-    });
-
-    $('#overlay').click(function(){
-        $(this).removeClass('active');
-    });
-
-    // $('#back').on('click', function(event) {
-    //     $('#overlay').removeClass('active');
-    // });
-
-    //slow down video
-    // var vid = document.getElementById("mesh");
-    // vid.playbackRate = 0.25;
-
+// We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 });

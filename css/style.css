@@ -157,9 +157,14 @@ a:hover {
     padding: 10px 16px;
 }
 
+#back::before {
+    content: '← ';
+}
+
 #jump-to-statement {
     position: absolute;
     top: calc(100vh - 80px);
+    top: calc(var(--vh, 1vh) * 100 - 80px);    
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000;
@@ -167,6 +172,12 @@ a:hover {
     border-radius: 100%;
     border: 2px solid white;
     padding: 12px 30px;
+    text-align: center;
+}
+
+#jump-to-statement::after {
+    display: inline-block;
+    content: "↓";
 }
 
 /* hide mobile message on desktop */
@@ -498,17 +509,32 @@ video {
 
 @media screen and (max-width: 800px){
 
+    #enter, #back {
+        top: 10px;
+        right: auto;
+        left: 15px;
+    }
+
     #text, #overlay h2, #artist-page h1, #artist-page h2 {
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .title {
+        top: 70px;
     }
 
     #artist-page h1, #artist-page h2 {
-        line-height: 24px;
+        line-height: 32px;
     }
 
     #text {
+        padding: 60px 10px;
         letter-spacing: 0px;
+    }
+
+    p {
+        margin-bottom: 40px;
     }
 
     #text img {
@@ -524,8 +550,8 @@ video {
     }
     
     #text #statement, #text #credits {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 28px;
     }
 
     .title {
@@ -539,7 +565,7 @@ video {
     }
 
     canvas {
-        opacity: .8;
+        opacity: .6;
     }
 
     #button {
@@ -550,6 +576,16 @@ video {
         width: 50px;
         height: auto;    
     }
+
+    #jump-to-statement {
+        top: calc(100vh - 120px);
+        top: calc(var(--vh, 1vh) * 100 - 120px);    
+    }
+
+    #jump-to-statement::after {
+        display: block;
+        content: "↓";
+    }    
 
 }
 
