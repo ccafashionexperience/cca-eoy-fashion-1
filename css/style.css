@@ -88,7 +88,7 @@ h1, h2 {
     letter-spacing: 1px;
 }
 
-#text #statement, #text #credits, #text #statement .english {
+#text #statement, #text #credits, #text #statement .english, #game-message {
     font-family: PingFangSC-Regular, 'Poppins', Arial, Helvetica, sans-serif;
     text-transform: none;
     letter-spacing: 0px;
