@@ -1,3 +1,9 @@
+/* 
+code adapted from Maniflames Pointcloud effect in Three.js demo:
+https://dev.to/maniflames/pointcloud-effect-in-three-js-3eic
+*/
+
+
 /* global THREE */
 
 window.addEventListener('load', init)
