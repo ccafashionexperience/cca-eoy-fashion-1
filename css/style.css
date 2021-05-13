@@ -402,10 +402,10 @@ video {
 }
 
 #overlay {
-    width: 160vw;
+    width: 130vw;
     height: 120vh;
     top: -10vh;
-    left: -30vw;
+    left: -15vw;
     position: fixed;
     background: radial-gradient(ellipse, rgba(255,255,255,0) 64%, rgba(255,255,255,.8) 66%, rgba(0,0,0,1) 70%);
     z-index: 10;
