@@ -92,7 +92,7 @@ function init() {
     }
     )
 
-  loader.load('./three/Kexin_1_Lo_Poly.obj',
+  loader.load('https://raw.githubusercontent.com/hamamoto/cca-eoy-fashion/main/three/Kexin_1_Lo_Poly.obj',
     
     (obj) => {
       material = new THREE.PointsMaterial( { size: .0015, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
