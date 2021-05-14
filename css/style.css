@@ -100,7 +100,7 @@ h1, h2 {
     font-family: PingFangSC-Semibold, 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-#text #statement .korean {
+#text #statement .korean, .korean {
     font-family: 'Gothic A1';
     font-weight: 200;
 }
@@ -119,6 +119,12 @@ h1, h2 {
 #text #credits, #game-message {
     font-size: 30px;
     line-height: 40px;
+}
+
+#credits .group {
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 2px;
 }
 
 .title {
@@ -298,28 +304,10 @@ p {
     /*text-align: left;*/
 }
 
-#text #credits ul {
-    flex: 1;
-}
-
-#credits ul {
-    list-style-type: none;
-}
-
-#credits ul li.title{
-    padding-bottom: 20px;
-}
-
-/*.credits ul li.title::before{
-    content: '';
-}
-
-.credits ul li::before{
-    content: '✳︎';
-*/}
-
-.credits ul li{
-    padding-bottom: 11px;
+#credits img {
+    display: inline-block;
+    height: 30px;
+    vertical-align: sub;
 }
 
 /* three js canvas */
@@ -370,12 +358,10 @@ canvas {
 }
 
 #embed iframe{
-    width: calc(50vw - 80px);
-    height: calc(50vw - 80px);
     border: none;
-
     width: 100vw;
     height: 100vh;    
+    height: calc(var(--vh, 1vh) * 100);
     position: fixed;    
     z-index: 0;
     /*position: sticky;
@@ -487,6 +473,15 @@ video {
         max-width: calc(100vw - 40px);
     }
 
+    #credits .group {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    #credits img {
+        height: 26px;
+    }
+
     .title {
         font-size: 22px;
         padding-bottom: 18px;
@@ -591,6 +586,14 @@ video {
     #text #statement, #text #credits {
         font-size: 20px;
         line-height: 28px;
+    }
+
+    #credits .group {
+        font-size: 16px;
+    }    
+
+    #credits img {
+        height: 24px;
     }
 
     .title {
